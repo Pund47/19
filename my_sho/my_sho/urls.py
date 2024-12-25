@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from task1.views import index,Games_page,Basket_page,Registration_page
+from task1.views import index,Games_page,Basket_page,Registration_page,Wiew_news
 
 
 urlpatterns = [
@@ -25,4 +25,5 @@ urlpatterns = [
     path('games/', Games_page),
     path('Basket/', Basket_page),
     path('Registration/', Registration_page),
+    path('WiewNews/', Wiew_news),
  ]

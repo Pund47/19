@@ -1,5 +1,5 @@
 #from logging import info
-
+from django.core.paginator import Paginator
 from django.http import HttpResponse
 from django.shortcuts import render
 from .models import *
@@ -54,3 +54,11 @@ def Registration_page(request):
 
 
     return render(request,'registration_page.html')
+
+def Wiew_news(request):
+    news = News.objects.all()
+    paginatior = Paginator(news,5)
+    page_number = request.GET.get('page')
+    page_obj = paginatior.get_page(page_number)
+    return render(request,'news.html',{'page_obj':page_obj})
+#,{news}
