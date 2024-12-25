@@ -55,7 +55,7 @@ ROOT_URLCONF = 'my_sho.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates/task1_task'],
+        'DIRS': [BASE_DIR / 'templates/task1'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

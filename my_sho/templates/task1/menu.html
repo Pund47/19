@@ -1,0 +1,29 @@
+  {% block title %}
+     <h1> Главная Страница </h1>
+  {% endblock %}
+
+  {% block navigations %}
+  <ul>
+      <p> <a href="/"> <button>Главная </button> </a> </p>
+      <p> <a href="games/"> <button>Магазин</button></a> </p>
+      <p> <a href="Basket/"> <button>Корзина</button> </a> </p>
+      <p> <a href="Registration/"> <button>Регистрация</button> </a> </p>
+  </ul>
+  {% endblock %}
+
+   {% block buttons_shop %}
+<ul>
+{% for game in Games%}
+    <p>{{ game.title}} | {{game.description}} | Стоимость: {{game.cost}} <a> <button> Купить</button></a></p>
+{%endfor%}
+<!--     <p> <a>Ferrari <button> Купить</button></a>  </p>-->
+<!--     <p> <a>Lamborghini <button> Купить</button></a>  </p>-->
+<!--     <p> <a>Bicycle <button>Купить</button> </a>  </p>-->
+     <p> <a href="/"><button>Вернуться</button></a></p>
+</ul>
+   {% endblock %}
+
+  {% block basket %}
+  <h1>Извините, ваша корзина пуста</h1>
+<p> <a href="/"><button>Вернуться</button></a></p>
+  {% endblock %}
