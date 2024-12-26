@@ -2,7 +2,7 @@
 from django.core.paginator import Paginator
 from django.http import HttpResponse
 from django.shortcuts import render
-from .models import *
+from .models import Buyer,Game,News
 
 #def index(request):
 #    Games  = Game.objects.all()
@@ -57,7 +57,7 @@ def Registration_page(request):
 
 def Wiew_news(request):
     news = News.objects.all().order_by('-date')
-    paginatior = Paginator(news,5)
+    paginatior = Paginator(news,3)
     page_number = request.GET.get('page')
     page_obj = paginatior.get_page(page_number)
     return render(request,'news.html',{'page_obj':page_obj})
