@@ -56,7 +56,7 @@ def Registration_page(request):
     return render(request,'registration_page.html')
 
 def Wiew_news(request):
-    news = News.objects.all()
+    news = News.objects.all().order_by('-date')
     paginatior = Paginator(news,5)
     page_number = request.GET.get('page')
     page_obj = paginatior.get_page(page_number)
